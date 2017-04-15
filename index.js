@@ -33,6 +33,10 @@ app.post("/book", function(req, res) {
     }));
 });
 
+app.post("/search",function(req,res){
+    res.send(console.log("work"))
+})
+
 app.listen(3000, function() {
     console.log("Server is running on http://localhost:3000");
 });
