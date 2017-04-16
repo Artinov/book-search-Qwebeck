@@ -34,7 +34,15 @@ app.post("/book", function(req, res) {
 });
 
 app.post("/search",function(req,res){
-    res.send(console.log("work"))
+    res.send(books.map(function(book){
+        return{
+            id: book._id,
+            name: book.name,
+            author: book.author,
+            picture: book.picture,
+            tags: book.tags
+        }
+    }))
 })
 
 app.listen(3000, function() {
