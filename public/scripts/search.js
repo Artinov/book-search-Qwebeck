@@ -24,14 +24,18 @@ console.log(res[0].name)
 
     console.log($form.val())
 
-    books.forEach(function(book){
-   if(book.name==$form.val()){
-       console.log('ok')
-   }
+//     books.forEach(function(book){
+//    if(book.name==$form.val()){
+//        console.log('ok')    
+//    }
+      
 
+// })
+var newBooks = books.filter(function(book){
+    return book.name == $form.val()
 })
     
-    // console.log(newBooks)
+    console.log(newBooks)
 
 
 
