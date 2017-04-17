@@ -34,14 +34,20 @@ app.post("/book", function(req, res) {
 });
 
 app.post("/search",function(req,res){
-    res.send(books.map(function(book){
-        return{
-            id: book._id,
-            name: book.name,
-            author: book.author,
-            picture: book.picture,
-            tags: book.tags
-        }
+console.log(req.body.bookName)
+console.log(books)
+var formValue =req.body.bookName
+    // res.send(books.map(function(book){
+    //     return{
+    //         id: book._id,
+    //         name: book.name,
+    //         author: book.author,
+    //         picture: book.picture,
+    //         tags: book.tags
+    //     }
+    // }))
+    res.send(books.filter(function(book){
+        return  book.name==formValue
     }))
 })
 
