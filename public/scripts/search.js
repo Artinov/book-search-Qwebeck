@@ -6,6 +6,8 @@ var $button = $("#searchButton")
 $button.click(function(){
 var $formValue = $("#bookName").val()
 console.log($formValue)
+ var $booksWrapper = $("#books");
+
 
 
 $.ajax({
@@ -16,10 +18,11 @@ $.ajax({
             
         },
     }).then(function(book){
+        
         console.log(book);
         var books = book
-
- var $booksWrapper = $("#books");
+         
+        //   $booksWrapper.fadeOut($bookTemplate)
 
         books.forEach(function bookAppear(book) {
             var $bookTemplate = $("#template > div").clone();
@@ -32,8 +35,15 @@ $.ajax({
            
             $booksWrapper.append($bookTemplate);
         });
+          
+          
+          
 
-
+$("#btn").click(function(){
+$("div #books > div").hide()
+})
 
 
     })})
+
+
