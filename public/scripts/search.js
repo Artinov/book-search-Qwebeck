@@ -4,6 +4,7 @@ var $button = $("#searchButton")
 
 
 $button.click(function(){
+   
 $("div #books > div").hide()
 var $formValue = $("#bookName").val()
 console.log($formValue)
@@ -19,7 +20,7 @@ $.ajax({
             
         },
     }).then(function(book){
-        
+         $("input").val('')
         console.log(book);
         var books = book
          
