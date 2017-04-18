@@ -4,6 +4,7 @@ var $button = $("#searchButton")
 
 
 $button.click(function(){
+$("div #books > div").hide()
 var $formValue = $("#bookName").val()
 console.log($formValue)
  var $booksWrapper = $("#books");
@@ -39,9 +40,7 @@ $.ajax({
           
           
 
-$("#btn").click(function(){
-$("div #books > div").hide()
-})
+
 
 
     })})
