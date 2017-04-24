@@ -35,6 +35,7 @@ app.post("/book", function(req, res) {
 
 app.post("/search",function(req,res){
 console.log(req.body.bookName)
+
 var formValue =req.body.bookName
     // res.send(books.map(function(book){
     //     return{
@@ -49,7 +50,12 @@ var formValue =req.body.bookName
 
 
    var newBooksArray =  books.filter(function(book){
-        return  book.name==formValue
+
+
+        var string=   book.name.toString()
+           var splitBookNames = string.split(" ")
+           
+        return  splitBookNames[0]== formValue || splitBookNames[1] == formValue || splitBookNames[2] == formValue || book.name == formValue
     })
     
     if(formValue === ''){

@@ -29,6 +29,12 @@ $.ajax({
         books.forEach(function bookAppear(book) {
             var $bookTemplate = $("#template > div").clone();
 
+             var string=   book.name.toString()
+           console.log (   
+
+             string.split(" ")
+           )
+
             $bookTemplate.find("[data-book-name]").text(book.name);
             $bookTemplate.find("[data-book-author]").text(book.author);
             $bookTemplate.find("[data-book-image]").attr("src", book.picture);

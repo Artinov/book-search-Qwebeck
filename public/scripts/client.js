@@ -18,7 +18,8 @@ function renderBooks() {
             $bookTemplate.find("[data-book-tags]").text(book.tags);
             $bookTemplate.find("[data-book-link]").attr("href", "/book/" + book.id);
            
-            $booksWrapper.append($bookTemplate);
+            var $cityInfoBlock = $booksWrapper.append($bookTemplate);
+            $cityInfoBlock.attr("style","display:block")
         });
     })
 }
