@@ -52,10 +52,16 @@ var formValue =req.body.bookName
    var newBooksArray =  books.filter(function(book){
 
 
-        var string=   book.name.toString()
-           var splitBookNames = string.split(" ")
-           
-        return  splitBookNames[0]== formValue || splitBookNames[1] == formValue || splitBookNames[2] == formValue || book.name == formValue
+        // var string=   book.name.toString()
+        //    var splitBookNames = string.split(" ")
+               var index =book.name.indexOf(formValue)
+           console.log(index)
+           if(index !=-1){
+        return           book.name
+               console.log(book.name)
+                
+           }
+            //   res.send(book)
     })
     
     if(formValue === ''){
